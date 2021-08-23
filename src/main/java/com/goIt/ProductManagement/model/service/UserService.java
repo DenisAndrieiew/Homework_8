@@ -1,4 +1,4 @@
-package com.goIt.ProductManagement.model.Service;
+package com.goIt.ProductManagement.model.service;
 
 import com.goIt.ProductManagement.exeptions.UserAlreadyExistException;
 import com.goIt.ProductManagement.model.entity.User;

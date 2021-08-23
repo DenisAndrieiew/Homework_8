@@ -1,7 +1,7 @@
 package com.goIt.ProductManagement.controller;
 
 import com.goIt.ProductManagement.exeptions.UserAlreadyExistException;
-import com.goIt.ProductManagement.model.Service.UserService;
+import com.goIt.ProductManagement.model.service.UserService;
 import com.goIt.ProductManagement.model.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
