@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.goIt'
+group = 'com.goIt.ProductManagement'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -25,14 +25,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	implementation group: 'org.postgresql', name: 'postgresql', version: "${postgreVersion}"
 	implementation group: 'org.springframework.security', name: 'spring-security-taglibs', version: "${springSecurityVersion}"
 	implementation group: 'org.hibernate', name: 'hibernate-validator', version: "${hibernateVersion}"
 	implementation group: 'javax.annotation', name: 'javax.annotation-api', version: "${javaAnnotationVersion}"
+	implementation group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.1'
 	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: "${tomcatJasperVersion}"
+	implementation group: 'jstl', name: 'jstl', version: '1.2'
+
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'

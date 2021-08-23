@@ -11,6 +11,8 @@ target/*
 out/*
 gradlew/*
 gradlew.bat
+src/main/resources/application.properties
+
 ### STS ###
 .apt_generated
 .classpath
