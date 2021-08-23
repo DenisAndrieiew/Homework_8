@@ -5,9 +5,10 @@ import com.goIt.ProductManagement.model.entity.ProductDAO;
 import com.goIt.ProductManagement.model.exceptions.ObjectNotFoundException;
 import com.goIt.ProductManagement.model.repository.ManufacturerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Objects;
-
+@Component
 public class ProductConverter implements Converter<ProductDAO, ProductDTO> {
     private final ManufacturerRepository manufacturerRepository;
 
