@@ -47,6 +47,11 @@ public class Role {
     }
 
     @Override
+    public String toString() {
+        return role.getRole();
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Role)) return false;

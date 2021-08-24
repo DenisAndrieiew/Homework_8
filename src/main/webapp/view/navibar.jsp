@@ -17,7 +17,7 @@
             <i></i>
         </button>
         <div class="dropdown-content">
-            <a href="${pageContext.request.contextPath}/#">Show Manufacturers</a>
+            <a href="${pageContext.request.contextPath}/manufacturer/index">Show Manufacturers</a>
             <security:authorize access="hasRole('ROLE_ADMIN')">
                             <a href="${pageContext.request.contextPath}/#">Add Manufacturer</a>
                         </security:authorize>
@@ -25,7 +25,7 @@
 
     </div>
         <security:authorize access="hasRole('ROLE_ADMIN')">
-            <div> <a href="${pageContext.request.contextPath}/#">Users</a></div>
+            <div> <a href="${pageContext.request.contextPath}/user/index">Users</a></div>
         </security:authorize>
     <div style="display: flex; justify-content: flex-end">
         <a href="${pageContext.request.contextPath}/logout">Logout</a>
