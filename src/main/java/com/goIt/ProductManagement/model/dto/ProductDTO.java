@@ -7,7 +7,7 @@ public class ProductDTO {
     private UUID id;
     private String name;
     private BigDecimal cost;
-    private String ManufacturerName;
+    private String manufacturerName;
 
     public ProductDTO() {
     }
@@ -37,10 +37,10 @@ public class ProductDTO {
     }
 
     public String getManufacturerName() {
-        return ManufacturerName;
+        return manufacturerName;
     }
 
     public void setManufacturerName(String manufacturerName) {
-        ManufacturerName = manufacturerName;
+        this.manufacturerName = manufacturerName;
     }
 }

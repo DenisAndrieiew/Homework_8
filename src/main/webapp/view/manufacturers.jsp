@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,19 +24,22 @@
                  <tr>
                      <td>${manufacturer.name}</td>
                      <td border="0" cellpadding="0">
-                     <p><a href="/manufacturers/details?id=${manufacturer.id}">
-                         <button type = "details-button" style="background-color:#080808">
+
+                     <p>
+                     <a href="/manufacturer/details?id=${manufacturer.id}">
+                         <button type = "details-button" style="background-color:#BBB">
                             Details
                          </button></a></p>
-                     <security:authorize access="hasRole('ROLE_ADMIN')">
+                         <security:authorize access="hasRole('ROLE_ADMIN')">
                      <a href="/manufacturer/update?id=${manufacturer.id}">
                             <button type = "update-button" style="background-color:#1E90FF">
                              update
-                     </button></a></p>
-                     <p><a href="/manufacturer/delete?id=${manufacturer.id}">
+                     </button></a></security:authorize></p>
+                     <p><security:authorize access="hasRole('ROLE_ADMIN')">
+                     <a href="/manufacturer/delete?id=${manufacturer.id}">
                      <button type = "delete-button" style="background-color:#DC143C">
                             Delete
-                     </button></p></security:authorize>
+                     </button></a></security:authorize></p>
                      </td>
                  </tr>
              </c:forEach>

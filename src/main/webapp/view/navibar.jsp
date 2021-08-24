@@ -8,7 +8,7 @@
         <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/product/index">Show Products</a>
             <security:authorize access="hasRole('ROLE_ADMIN')">
-                <a href="${pageContext.request.contextPath}/#">Add Product</a>
+                <a href="${pageContext.request.contextPath}/product/new">Add Product</a>
             </security:authorize>
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/manufacturer/index">Show Manufacturers</a>
             <security:authorize access="hasRole('ROLE_ADMIN')">
-                            <a href="${pageContext.request.contextPath}/#">Add Manufacturer</a>
+                            <a href="${pageContext.request.contextPath}/manufacturer/new">Add Manufacturer</a>
                         </security:authorize>
         </div>
 

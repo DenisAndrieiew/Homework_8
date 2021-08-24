@@ -2,6 +2,7 @@ package com.goIt.ProductManagement.model.service;
 
 import com.goIt.ProductManagement.model.dto.ProductDTO;
 import com.goIt.ProductManagement.model.entity.ProductDAO;
+import com.goIt.ProductManagement.model.repository.ManufacturerRepository;
 import com.goIt.ProductManagement.model.repository.ProductRepository;
 import com.goIt.ProductManagement.model.service.converter.ProductConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,15 @@ import java.util.UUID;
 public class ProductService implements EntityService<ProductDTO> {
     private ProductRepository repository;
     private ProductConverter converter;
+    private ManufacturerRepository manufacturerRepository;
 
     @Autowired
 
-    public ProductService(ProductRepository repository, ProductConverter converter) {
+    public ProductService(ProductRepository repository, ProductConverter converter,
+                          ManufacturerRepository manufacturerRepository) {
         this.repository = repository;
         this.converter = converter;
+        this.manufacturerRepository = manufacturerRepository;
     }
 
     @Override
@@ -48,4 +52,5 @@ public class ProductService implements EntityService<ProductDTO> {
     public void delete(UUID id) {
         repository.delete(repository.getById(id));
     }
+
 }

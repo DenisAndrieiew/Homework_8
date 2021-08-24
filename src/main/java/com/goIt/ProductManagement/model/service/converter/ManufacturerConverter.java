@@ -8,7 +8,9 @@ import com.goIt.ProductManagement.model.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
 import java.util.stream.Collectors;
+
 @Component
 public class ManufacturerConverter implements Converter<ManufacturerDAO, ManufacturerDTO> {
     private ProductRepository repository;
@@ -33,11 +35,13 @@ public class ManufacturerConverter implements Converter<ManufacturerDAO, Manufac
         ManufacturerDAO manufacturerDAO = new ManufacturerDAO();
         manufacturerDAO.setName(manufacturerDTO.getName());
         manufacturerDAO.setId(manufacturerDTO.getId());
-        manufacturerDAO.setProducts(manufacturerDTO.getProductNames().stream().map(productName ->
-                repository.findByName(productName).orElseThrow(() ->
-                        new ObjectNotFoundException(String.format
-                                ("product %s not exist", productName))))
-                .collect(Collectors.toSet()));
+        if (Objects.nonNull(manufacturerDTO.getProductNames())) {
+            manufacturerDAO.setProducts(manufacturerDTO.getProductNames().stream().map(productName ->
+                    repository.findByName(productName).orElseThrow(() ->
+                            new ObjectNotFoundException(String.format
+                                    ("product %s not exist", productName))))
+                    .collect(Collectors.toSet()));
+        }
         return manufacturerDAO;
     }
 }

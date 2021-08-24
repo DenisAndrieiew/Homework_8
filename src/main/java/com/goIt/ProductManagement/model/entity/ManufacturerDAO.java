@@ -13,7 +13,7 @@ public class ManufacturerDAO {
     private UUID id;
     @Column(name="manufacturer_name")
     private String name;
-    @OneToMany(mappedBy = "manufacturer")
+    @OneToMany(mappedBy = "manufacturer", cascade = CascadeType.ALL)
     private Set<ProductDAO> products;
 
     public ManufacturerDAO() {

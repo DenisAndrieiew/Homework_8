@@ -11,6 +11,8 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
+
 @Service
 public class ManufacturerService implements EntityService<ManufacturerDTO> {
     private ManufacturerRepository repository;
@@ -45,5 +47,9 @@ public class ManufacturerService implements EntityService<ManufacturerDTO> {
     @Override
     public void delete(UUID id) {
         repository.delete(repository.getById(id));
+    }
+
+    public Set<String> getNames(){
+        return repository.findAll().stream().map(ManufacturerDAO::getName).collect(Collectors.toSet());
     }
 }
