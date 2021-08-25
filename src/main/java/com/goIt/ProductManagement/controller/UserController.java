@@ -99,6 +99,6 @@ public class UserController {
     @GetMapping(path = "/delete")
     public RedirectView delete(@RequestParam(name = "id") UUID id) {
         userService.delete(id);
-        return new RedirectView("user/index");
+        return new RedirectView("index");
     }
 }

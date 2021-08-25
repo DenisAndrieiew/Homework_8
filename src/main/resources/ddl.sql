@@ -1,3 +1,5 @@
+CREATE DATABASE "ProductManagement" WITH OWNER Postgres;
+
 CREATE TABLE roles(
 	identifier uuid PRIMARY KEY,
 	role varchar (100) not null UNIQUE);
